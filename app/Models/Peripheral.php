@@ -20,6 +20,6 @@ class Peripheral extends Model
 
     public function collaborators()
     {
-        return $this->belongsToMany(Collaborator::class, 'collaborator_peripheral', 'peripheral_id');
+        return $this->belongsToMany(Collaborator::class, 'collaborator_machine_peripheral', 'peripheral_id');
     }
 }

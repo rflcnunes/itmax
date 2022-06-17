@@ -21,17 +21,6 @@ class Collaborator extends Model
 
     public function machines()
     {
-        return $this->belongsToMany(Machine::class, 'collaborator_machine', 'collaborator_id');
+        return $this->belongsToMany(Machine::class, 'collaborator_machine_peripheral', 'collaborator_id');
     }
-
-    public function peripherals()
-    {
-        return $this->belongsToMany(Peripheral::class, 'collaborator_peripheral', 'collaborator_id');
-    }
-
-    public function documents()
-    {
-        return $this->belongsToMany(Document::class, 'collaborator_document', 'collaborator_id');
-    }
-
 }

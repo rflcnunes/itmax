@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('collaborator_document', function (Blueprint $table) {
+        Schema::create('collaborator_machine_peripheral', function (Blueprint $table) {
             $table->foreignId('collaborator_id')->constrained();
-            $table->foreignId('document_id')->constrained();
+            $table->foreignId('machine_id')->nullable()->constrained();
+            $table->foreignId('peripheral_id')->nullable()->constrained();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('collaborator_document');
+        Schema::dropIfExists('collaborator_machine_peripheral');
     }
 };
