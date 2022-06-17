@@ -27,4 +27,9 @@ class CollaboratorService
     {
         return $this->collaborator->attachMachine($data);
     }
+
+    public function attachPeripheral(array $data)
+    {
+        return $this->collaborator->attachPeripheral($data);
+    }
 }
