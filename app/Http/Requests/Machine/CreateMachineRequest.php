@@ -25,7 +25,6 @@ class CreateMachineRequest extends FormRequest
     {
         return [
             'code_machine' => 'required|string|max:10|unique:machines',
-            'type' => 'required|string|max:30',
             'model' => 'required|string|max:30',
             'manufacturer' => 'required|string|max:30',
             'quantity' => 'required|integer',
