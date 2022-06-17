@@ -28,4 +28,18 @@ class CollaboratorRepository implements CollaboratorRepositoryInterface
     {
         return $this->collaborator->find($id);
     }
+
+    public function attachMachine(array $data)
+    {
+
+        $collaborator_id = $data['collaborator_id'];
+        $machine_id = $data['machine_id'];
+
+        return $this->collaborator->find($collaborator_id)->machines()->attach($machine_id);
+    }
+
+    public function getCollaboratorMachines($id)
+    {
+        return $this->collaborator->find($id)->machines;
+    }
 }
