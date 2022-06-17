@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Collaborator\BindCollaboratorMachineRequest;
+use App\Http\Requests\Collaborator\BindCollaboratorPeripheralsRequest;
 use App\Http\Requests\Collaborator\CreateCollaboratorRequest;
 use App\Services\CollaboratorService;
 
@@ -42,5 +43,12 @@ class CollaboratorController extends Controller
     public function getMachines($id)
     {
         return $this->collaborator->getCollaboratorRepository()->getCollaboratorMachines($id);
+    }
+
+    public function attachPeripheral(BindCollaboratorPeripheralsRequest $request)
+    {
+        $data = $request->all();
+
+        return $this->collaborator->attachPeripheral($data);
     }
 }
