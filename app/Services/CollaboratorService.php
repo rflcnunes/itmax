@@ -22,4 +22,9 @@ class CollaboratorService
     {
         return $this->collaborator->createCollaborator($data);
     }
+
+    public function attachMachine(array $data)
+    {
+        return $this->collaborator->attachMachine($data);
+    }
 }
