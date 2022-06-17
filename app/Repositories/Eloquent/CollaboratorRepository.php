@@ -42,4 +42,12 @@ class CollaboratorRepository implements CollaboratorRepositoryInterface
     {
         return $this->collaborator->find($id)->machines;
     }
+
+    public function attachPeripheral(array $data)
+    {
+        $collaborator_id = $data['collaborator_id'];
+        $peripheral_id = $data['peripheral_id'];
+
+        return $this->collaborator->find($collaborator_id)->peripherals()->attach($peripheral_id);
+    }
 }
