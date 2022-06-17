@@ -24,10 +24,11 @@ Route::controller(CollaboratorController::class)->group(function () {
     Route::post('/collaborator/create', 'create');
     Route::get('/collaborators', 'getCollaborators');
     Route::get('/collaborators/{id}', 'getCollaborator');
+    Route::post('/collaborator/bind-machine', 'attachMachine');
 });
 
 Route::controller(MachineController::class)->group(function () {
     Route::post('/machine/create', 'create');
-    Route::get('/machines', 'getMachines');
+    Route::get('/machines', 'index');
     Route::get('/machines/{id}', 'getMachine');
 });
