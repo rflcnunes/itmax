@@ -20,11 +20,6 @@ class Machine extends Model
 
     public function collaborators()
     {
-        return $this->belongsToMany(Collaborator::class, 'machine_id');
-    }
-
-    public function documents()
-    {
-        return $this->belongsToMany(Document::class, 'machine_id');
+        return $this->belongsToMany(Collaborator::class, 'collaborator_machine', 'machine_id');
     }
 }

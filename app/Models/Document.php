@@ -17,16 +17,6 @@ class Document extends Model
 
     public function collaborators()
     {
-        return $this->belongsToMany(Collaborator::class, 'document_id');
-    }
-
-    public function machines()
-    {
-        return $this->belongsToMany(Machine::class, 'document_id');
-    }
-
-    public function peripherals()
-    {
-        return $this->belongsToMany(Peripheral::class, 'document_id');
+        return $this->belongsToMany(Collaborator::class, 'collaborator_document', 'document_id');
     }
 }
