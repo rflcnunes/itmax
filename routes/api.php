@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CollaboratorController;
+use App\Http\Controllers\MachineController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,10 @@ Route::controller(CollaboratorController::class)->group(function () {
     Route::post('/collaborator/create', 'create');
     Route::get('/collaborators', 'getCollaborators');
     Route::get('/collaborators/{id}', 'getCollaborator');
+});
+
+Route::controller(MachineController::class)->group(function () {
+    Route::post('/machine/create', 'create');
+    Route::get('/machines', 'getMachines');
+    Route::get('/machines/{id}', 'getMachine');
 });

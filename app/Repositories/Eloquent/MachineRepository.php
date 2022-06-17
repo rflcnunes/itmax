@@ -14,6 +14,11 @@ class MachineRepository implements MachineRepositoryInterface
         $this->machine = $machine;
     }
 
+    public function createMachine(array $data)
+    {
+        return $this->machine->create($data);
+    }
+
     public function getAllMachines()
     {
         return $this->machine->all();

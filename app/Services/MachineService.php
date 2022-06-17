@@ -17,4 +17,9 @@ class MachineService
     {
         return $this->machine;
     }
+
+    public function createMachine(array $data)
+    {
+        return $this->machine->createMachine($data);
+    }
 }
