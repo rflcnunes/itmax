@@ -25,6 +25,7 @@ Route::controller(CollaboratorController::class)->group(function () {
     Route::get('/collaborators', 'getCollaborators');
     Route::get('/collaborators/{id}', 'getCollaborator');
     Route::post('/collaborator/bind-machine', 'attachMachine');
+    Route::get('/collaborators/{id}/machines', 'getMachines');
 });
 
 Route::controller(MachineController::class)->group(function () {
