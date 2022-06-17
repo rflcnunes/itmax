@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Collaborator\BindCollaboratorMachineRequest;
 use App\Http\Requests\Collaborator\CreateCollaboratorRequest;
 use App\Services\CollaboratorService;
 
@@ -29,5 +30,17 @@ class CollaboratorController extends Controller
     public function getCollaborator($id)
     {
         return $this->collaborator->getCollaboratorRepository()->getCollaboratorById($id);
+    }
+
+    public function attachMachine(BindCollaboratorMachineRequest $request)
+    {
+        $data = $request->all();
+
+        return $this->collaborator->attachMachine($data);
+    }
+
+    public function getMachines($id)
+    {
+        return $this->collaborator->getCollaboratorRepository()->getCollaboratorMachines($id);
     }
 }
